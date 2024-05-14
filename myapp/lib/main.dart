@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:myapp/pages/home/widgets/home.dart';
+import 'package:myapp/pages/home/home.dart';
 
 void main() {
   runApp(const MyApp());
