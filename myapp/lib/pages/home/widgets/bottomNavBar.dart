@@ -6,7 +6,7 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xfff6f8ff),
+      color: const Color(0xFFA1887F),
       child: Container(
         decoration: BoxDecoration(
           boxShadow: [

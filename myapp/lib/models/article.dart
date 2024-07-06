@@ -1,20 +1,20 @@
 class Article {
   String bgImage;
-  String icon;
   String name;
-  String type;
-  num score;
-  num review;
+  String category;
+  String date;
+  // num score;
+  // num review;
   String description;
   List<String> images;
 
   Article(
       this.bgImage,
-      this.icon,
       this.name,
-      this.type,
-      this.score,
-      this.review,
+      this.category,
+      this.date,
+      // this.score,
+      // this.review,
       this.description,
       this.images,
       );
@@ -23,11 +23,11 @@ class Article {
     return [
       Article(
         'assets/images/ori1.jpg',
-        'assets/images/ori_logo.png',
         'Article 1',
         'Visage',
-        4.8,
-        324,
+        '2021-09-01',
+        // 4.8,
+        // 324,
         "Article visage",
         [
           'assets/images/ori2.jpg',
@@ -37,11 +37,11 @@ class Article {
       ),
       Article(
         'assets/images/rl1.jpg',
-        'assets/images/rl_logo.png',
         'Article 2',
         'Cheveux',
-        4.7,
-        148,
+        '2021-09-01',
+        // 4.7,
+        // 148,
         "Article cheveux",
         [
           'assets/images/rl2.jpg',
