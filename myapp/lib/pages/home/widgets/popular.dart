@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/article.dart';
+import '../../detail/detail.dart';
 
 class PopularArticle extends StatelessWidget {
   PopularArticle({super.key});

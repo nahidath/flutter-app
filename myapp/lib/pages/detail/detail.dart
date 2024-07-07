@@ -9,6 +9,9 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // appBar: AppBar(
+      //   title: Text(article.name),
+      // ),
         backgroundColor: const Color(0xFFD7CCC8),
         body: SingleChildScrollView(
         child: Stack(
@@ -78,7 +81,8 @@ class DetailPage extends StatelessWidget {
             ),
           ),
         ],
-        ]
+      ),
+    ),
     );
   }
 }
