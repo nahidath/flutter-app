@@ -33,7 +33,7 @@ class CategorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color(0xFFD7CCC8),
+        color: Color(0xFFE0E0E0),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),

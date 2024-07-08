@@ -36,9 +36,10 @@ class HeaderSection extends StatelessWidget {
             ],
           ),
           CircleAvatar(
-            child: Image.asset(
-              'assets/img/user-no-photo.png',
-              fit: BoxFit.cover,
+            backgroundColor: const Color(0xFFDAA520),
+            child: const Icon(
+              Icons.person,
+              color: Colors.white,
             ),
           )
         ],
