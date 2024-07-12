@@ -13,7 +13,7 @@ class SearchSection extends StatelessWidget {
       child: Stack(
         children: [
           TextField(
-            cursorColor: const Color(0xFF5F67EA),
+            cursorColor: const Color(0xFF282828),
             decoration: InputDecoration(
               fillColor: const Color(0xFFF6F8FF),
               filled: true,
@@ -40,13 +40,13 @@ class SearchSection extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 10,
+            bottom: 15,
             right: 12,
             child: Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: const Color(0xFF5F67EA),
+                color: const Color(0xFF4A3434),
               ),
               child: const Icon(
                 Icons.mic_outlined,

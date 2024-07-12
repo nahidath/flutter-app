@@ -9,22 +9,22 @@ class CategorySection extends StatelessWidget {
   final categories = [
     {
       'icon': Icons.face_retouching_natural,
-      'color': const Color(0xFF605CF4),
+      'color': const Color(0xFF7D3705),
       'title': 'Visage'
     },
     {
       'icon': Icons.accessibility_new,
-      'color': const Color(0xFFFC77A6),
+      'color': const Color(0xFFC95706),
       'title': 'Corps'
     },
     {
       'icon': Icons.face_3,
-      'color': const Color(0xFF4391FF),
+      'color': const Color(0xFFDD8100),
       'title': 'Cheveux'
     },
     {
       'icon': Icons.add_circle,
-      'color': const Color(0xFF7182f2),
+      'color': const Color(0xFFE39D35),
       'title': 'Plus'
     },
   ];
@@ -33,7 +33,7 @@ class CategorySection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color(0xFFE0E0E0),
+        color: Color(0xFFD7CCC8),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -56,14 +56,14 @@ class CategorySection extends StatelessWidget {
                     child: Icon(
                       categories[index]['icon'] as IconData,
                       color: Colors.white,
-                      size: 40,
+                      size: 28,
                     ),
                   ),
                   const SizedBox(height: 10),
                   Text(
                     categories[index]['title'] as String,
                     style: TextStyle(
-                      color: Colors.black.withOpacity(0.7),
+                      color: Color(0xFF242424),
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
@@ -82,6 +82,7 @@ class CategorySection extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
+                color: Color(0xFF242424),
               ),
             ),
           ),
@@ -94,6 +95,7 @@ class CategorySection extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
+                color: Color(0xFF242424),
               ),
             ),
           ),
