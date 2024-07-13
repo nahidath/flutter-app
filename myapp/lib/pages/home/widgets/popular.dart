@@ -11,11 +11,12 @@ class PopularArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 210,
+      width: 300,
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(
-          horizontal: 25,
-          vertical: 20,
+          horizontal: 20,
+          vertical: 15,
         ),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => GestureDetector(
@@ -41,7 +42,7 @@ class PopularArticle extends StatelessWidget {
             ),
           ),
         ),
-        separatorBuilder: (context, index) => const SizedBox(width: 10),
+        separatorBuilder: (context, index) => const SizedBox(width: 30),
         itemCount: articles.length,
       ),
     );

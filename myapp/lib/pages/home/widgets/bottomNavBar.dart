@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 
-class BottomNavBar extends StatelessWidget {
+class BottomNavBar extends StatefulWidget {
   const BottomNavBar({Key? key}) : super(key: key);
 
   @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+  @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xFFA1887F),
+      color: const Color(0xFFD7CCC8),
       child: Container(
         decoration: BoxDecoration(
           boxShadow: [
@@ -22,15 +34,17 @@ class BottomNavBar extends StatelessWidget {
             topRight: Radius.circular(30),
           ),
           child: BottomNavigationBar(
+            selectedItemColor: const Color(0xFF8B5E3C),
+            unselectedItemColor: const Color(0xFF958f92),
             type: BottomNavigationBarType.fixed,
-            items: const [
+            items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
+                icon: Icon(Icons.explore),
+                label: 'Explore',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.favorite),
@@ -41,6 +55,8 @@ class BottomNavBar extends StatelessWidget {
                 label: 'Profile',
               ),
             ],
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
           ),
         ),
       ),
