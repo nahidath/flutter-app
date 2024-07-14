@@ -11,8 +11,7 @@ class PopularArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 210,
-      width: 300,
+      height: 200,
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(
           horizontal: 20,
