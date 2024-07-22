@@ -9,44 +9,59 @@ class NewestArticle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(25),
-      child: Column(
-        children: articles
-            .map(
-              (article) => Container(
-            padding: const EdgeInsets.all(15),
-            margin: const EdgeInsets.only(bottom: 20),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(5),
-                  child: Image.asset(
-                    article.bgImage,
+    return Column(
+      children: articles
+          .map(
+            (article) => Container(
+          padding: const EdgeInsets.all(10),
+          margin: const EdgeInsets.only(bottom: 20),
+          // decoration: BoxDecoration(
+          //   color: Colors.white,
+          //   borderRadius: BorderRadius.circular(15),
+          // ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Ajuste la taille de la colonne au contenu
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 380,
+                height: 190,
+                child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.asset(article.bgImage),
+                    ),
                   ),
                 ),
-                Column(
-                  children: [
-                    Text(
-                      article.name,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 5),
+                child: SizedBox(
+                  child: Text(
+                    article.name,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ],
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-                const SizedBox(height: 10),
-              ],
-            ),
+              ),
+            ],
           ),
-        )
-            .toList(),
-      ),
+        ),
+      )
+          .toList(),
     );
   }
 }

@@ -11,10 +11,10 @@ class PopularArticle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 260,
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(
-          horizontal: 20,
+          horizontal: 10,
           vertical: 15,
         ),
         scrollDirection: Axis.horizontal,
@@ -24,24 +24,46 @@ class PopularArticle extends StatelessWidget {
               builder: (context) => DetailPage(articles[index]),
             ),
           ),
-          child: Card(
-            elevation: 5,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Container(
-              padding: const EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
+          child: Column(
+            mainAxisSize: MainAxisSize.min, // Ajuste la taille de la colonne au contenu
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                width: 300,
+                height: 190,
+                child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(15),
+                      child: Image.asset('assets/your_image.png'), // Remplacez par articles[index].bgImage
+                    ),
+                  ),
+                ),
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(articles[index].bgImage),
+              SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 5),
+                child: SizedBox(
+                  width: 280,
+                  child: Text(
+                    articles[index].name,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ),
-            ),
+            ],
           ),
         ),
-        separatorBuilder: (context, index) => const SizedBox(width: 30),
+        separatorBuilder: (context, index) => const SizedBox(width: 10),
         itemCount: articles.length,
       ),
     );

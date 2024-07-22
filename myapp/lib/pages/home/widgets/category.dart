@@ -81,7 +81,7 @@ class CategorySection extends StatelessWidget {
               'Articles populaires',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 22,
                 color: Color(0xFF242424),
               ),
             ),
@@ -89,12 +89,13 @@ class CategorySection extends StatelessWidget {
           PopularArticle(),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 25),
+            margin: const EdgeInsets.only(top: 30),
             width: 410,
             child: const Text(
               'Nouveaux articles',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 20,
+                fontSize: 22,
                 color: Color(0xFF242424),
               ),
             ),
