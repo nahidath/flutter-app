@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/pages/profile/widgets/ProfileSection.dart';
 
 import '../home/widgets/bottomNavBar.dart';
 
@@ -18,7 +19,7 @@ class ProfilePage extends StatelessWidget {
             children: [
               Column(
                 children: [
-
+                    // ProfileSection(),
                 ],
               )
             ],
