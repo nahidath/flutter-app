@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/pages/home/home.dart';
+import 'package:myapp/pages/home/widgets/bottomNavBar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'MyBeautyAfroBlog',
-      home: HomePage(),
+      home: BottomNavBar(),
     );
   }
 }

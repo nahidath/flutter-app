@@ -19,14 +19,14 @@ class ProfilePage extends StatelessWidget {
             children: [
               Column(
                 children: [
-                    // ProfileSection(),
+                  const SizedBox(height: 170),
+                     ProfileSection(),
                 ],
               )
             ],
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

@@ -14,10 +14,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    HomePageBN(),
-    FavoritesPageBN(),
+    HomePage(),
     ExplorePageBN(),
-    ProfilePageBN(),
+    FavoritesPageBN(),
+    ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -78,14 +78,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
   }
 }
 
-class HomePageBN extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Home Page', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    );
-  }
-}
+// class HomePageBN extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return HomePage();
+//   }
+// }
 
 class ExplorePageBN extends StatelessWidget {
   @override
@@ -105,11 +103,11 @@ class FavoritesPageBN extends StatelessWidget {
   }
 }
 
-class ProfilePageBN extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Profile Page', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold))
-    );
-  }
-}
+// class HomePageBN extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Text('Profile Page', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold))
+//     );
+//   }
+// }
