@@ -28,7 +28,7 @@ class Article {
         '2021-09-01',
         // 4.8,
         // 324,
-        "Article visage",
+        "Prendre soin de son visage est crucial pour maintenir une peau saine et radieuse. Voici quelques étapes clés pour une routine de soins efficace.\n\n1. Nettoyez votre visage matin et soir avec un nettoyant doux.\n\n2. Exfoliez votre peau une à deux fois par semaine pour éliminer les cellules mortes et révéler un teint éclatant.\n\n3. Hydratez votre peau avec une crème adaptée à votre type de peau.\n\n4. Protégez votre peau des rayons UV en appliquant un écran solaire tous les jours.\n\n5. N'oubliez pas de boire suffisamment d'eau pour maintenir une peau hydratée et éclatante.",
         [
           'assets/images/ori2.jpg',
           'assets/images/ori3.jpg',

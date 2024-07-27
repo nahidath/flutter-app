@@ -9,63 +9,86 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text(article.name),
-      // ),
         backgroundColor: const Color(0xFFD7CCC8),
         body: SingleChildScrollView(
+          padding: const EdgeInsets.only(bottom: 30),
         child: Stack(
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 300,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(article.bgImage),
-                    fit: BoxFit.cover,
+                alignment : Alignment.center,
+              padding: const EdgeInsets.only(top: 110),
+                child: SizedBox(
+                  width: 330,
+                  height: 220,
+                  child :
+                  Card(
+                    elevation: 5,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image.asset(article.bgImage),
+                      ),
+                    ),
                   ),
                 ),
+
               ),
               Container(
-                padding: const EdgeInsets.all(25),
-                child: Column(
+                padding: const EdgeInsets.only(top: 25),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
+                child:
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       article.name,
+                      softWrap: true,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
+
                     ),
-                    Row(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           article.category,
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.grey,
+                            fontStyle: FontStyle.italic,
                           ),
                         ),
-                        const SizedBox(width: 10),
                         Text(
-                          article.date,
+                          "Ecrit le ${article.date}",
                           style: const TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             color: Colors.grey,
+                            fontStyle: FontStyle.italic,
                           ),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    const SizedBox(height: 30),
                     Text(
                       article.description,
                       style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey,
+                        fontSize: 18,
+                        color: Color(0xFF4A4A4A),
                       ),
+                      softWrap: true,
                     ),
-                    const SizedBox(height: 10),
 
                   ],
                 ),
