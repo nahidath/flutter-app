@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-
 
 class ProfileSection extends StatelessWidget {
   ProfileSection({super.key});
@@ -28,7 +25,6 @@ class ProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
         color: Color(0xFFD7CCC8),
         borderRadius: BorderRadius.only(
@@ -38,12 +34,28 @@ class ProfileSection extends StatelessWidget {
       ),
       child: Column(
         children: [
+          //add text before profile menu
+          Container(
+            padding: const EdgeInsets.only(top: 40),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Nom Prenom',
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ),
           //profile menu here
           Container(
-            height: MediaQuery.of(context).size.height,
-            padding: const EdgeInsets.all(25),
+            height: 460.3,
+            padding: const EdgeInsets.only(left: 25, right: 25),
             child: ListView.separated(
-              // scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) => Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

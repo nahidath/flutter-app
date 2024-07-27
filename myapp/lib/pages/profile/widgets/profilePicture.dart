@@ -27,14 +27,6 @@ class ProfilePicture extends StatelessWidget {
               color: Colors.white,
               width: 2,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.1),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: Offset(0, 3),
-              ),
-            ],
           ),
           child: CircleAvatar(
             radius: radius,
@@ -43,20 +35,23 @@ class ProfilePicture extends StatelessWidget {
         ),
         if (isEdit)
           Positioned(
-            bottom: 0,
+            bottom: -4,
             right: 4,
-            child: Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.blue,
-                border: Border.all(
-                  color: Colors.white,
-                  width: 2,
+            child: IconButton(
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all(Color(0xFFDAA520)),
+                shape: WidgetStateProperty.all(
+                    const CircleBorder(
+                      side: BorderSide(
+                        color: Colors.white,
+                        width: 2,
+                      ),
+                    )
                 ),
+                fixedSize: WidgetStateProperty.all(const Size(40, 40)),
               ),
-              child: Icon(
+              onPressed: () {  },
+              icon: Icon(
                 Icons.camera_alt,
                 color: Colors.white,
               ),
