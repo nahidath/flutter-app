@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../models/article.dart';
-import '../../detail/detail.dart';
+import '../../article/article.dart';
 
 class PopularArticle extends StatelessWidget {
   PopularArticle({super.key});
@@ -21,7 +21,7 @@ class PopularArticle extends StatelessWidget {
         itemBuilder: (context, index) => GestureDetector(
           onTap: () => Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) => DetailPage(articles[index]),
+              builder: (context) => ArticlePage(articles[index]),
             ),
           ),
           child: Column(

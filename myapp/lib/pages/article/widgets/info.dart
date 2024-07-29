@@ -1,5 +1,5 @@
 // import 'package:flutter/material.dart';
-// import 'package:myapp/pages/detail/widgets/header.dart';
+// import 'package:myapp/pages/article/widgets/header.dart';
 //
 // import '../../../models/article.dart';
 //

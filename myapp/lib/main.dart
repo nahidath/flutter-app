@@ -12,13 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
+    return AnnotatedRegion(
+        value: const SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.light),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'MyBeautyAfroBlog',
+          home: BottomNavBar(),
+        )
     );
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'MyBeautyAfroBlog',
-      home: BottomNavBar(),
-    );
+
   }
 }
