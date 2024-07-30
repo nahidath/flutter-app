@@ -7,12 +7,12 @@ class CardImg extends StatelessWidget {
   final String imgPath;
   final double width;
   final double height;
+  final bool isVideo = false;
 
-  CardImg({required this.imgPath, required this.width, required this.height});
+  CardImg({required this.imgPath, required this.width, required this.height, isVideo});
 
   @override
   Widget build(BuildContext context) {
-    print(imgPath);
     return Container(
       width: width,
       height: height,

@@ -34,13 +34,16 @@ class ArticlePage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Container(
-                            padding: const EdgeInsets.all(5),
+                            // padding: const EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(15),
                             ),
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(15),
-                              child: Image.asset(article.bgImage),
+                              child : Image(
+                                image: AssetImage(article.bgImage),
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -85,34 +88,26 @@ class ArticlePage extends StatelessWidget {
                             ],
                           ),
                           const SizedBox(height: 30),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ListView.builder(
-                              itemCount: article.description.length,
-                              itemBuilder: (context, index) {
-                                final item = article.description[index];
-                                if (item is String) {
-                                  print("string");
-                                  return  Text(
-                                    item,
-                                    style: const TextStyle(
-                                      fontSize: 18,
-                                      color: Color(0xFF4A4A4A),
-                                    ),
-                                    softWrap: true,
-                                  );
-                                } else if (item is Widget) {
-                                  print("widget");
-                                  return Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                                    child: item,
-                                  );
-                                }
-                                return SizedBox.shrink(); // Si un type non supporté est trouvé
-                              },
-                            ),
-                          ),
-
+                          Column(
+                            children: article.description.map<Widget>((e) {
+                              if (e is String) {
+                                return Text(
+                                  e,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                );
+                              } else if (e is CardImg) {
+                                //add padding
+                                return Padding(
+                                  padding: const EdgeInsets.only(top: 15, bottom: 15),
+                                  child: e,
+                                );
+                              }
+                              return const SizedBox();
+                            }).toList(),
+                          )
 
                         ],
                       ),
