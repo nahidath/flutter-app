@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 
 class CardImg extends StatelessWidget {
   final String imgPath;
-  final double width;
-  final double height;
-  final bool isVideo = false;
+  final double width = 330;
+  final double height = 220;
 
-  CardImg({required this.imgPath, required this.width, required this.height, isVideo});
+
+  CardImg({required this.imgPath, width, height});
 
   @override
   Widget build(BuildContext context) {

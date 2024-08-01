@@ -1,3 +1,5 @@
+import 'package:myapp/pages/article/widgets/card_vid.dart';
+
 import '../pages/article/widgets/card_img.dart';
 
 class Article {
@@ -35,6 +37,7 @@ class Article {
           "1. Nettoyez votre visage matin et soir avec un nettoyant doux.",
           CardImg(imgPath: 'assets/img/wash_face_black_woman.jpg', width: 330, height: 220),
           "2. Exfoliez votre peau une à deux fois par semaine pour éliminer les cellules mortes et révéler un teint éclatant.",
+          CardVid(width: 330, height: 220, videoId: 'AIeOHiQvlCQ'),
           "3. Hydratez votre peau avec une crème adaptée à votre type de peau.",
           "4. Protégez votre peau des rayons UV en appliquant un écran solaire tous les jours.",
           "5. N'oubliez pas de boire suffisamment d'eau pour maintenir une peau hydratée et éclatante.",

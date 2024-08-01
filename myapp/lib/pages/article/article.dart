@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:myapp/pages/article/widgets/card_img.dart';
+import 'package:myapp/pages/article/widgets/card_vid.dart';
 import '../../models/article.dart';
 
 class ArticlePage extends StatelessWidget {
@@ -99,6 +100,12 @@ class ArticlePage extends StatelessWidget {
                                   ),
                                 );
                               } else if (e is CardImg) {
+                                //add padding
+                                return Padding(
+                                  padding: const EdgeInsets.only(top: 15, bottom: 15),
+                                  child: e,
+                                );
+                              }else if (e is CardVid) {
                                 //add padding
                                 return Padding(
                                   padding: const EdgeInsets.only(top: 15, bottom: 15),
