@@ -17,7 +17,8 @@ class ArticlePage extends StatelessWidget {
           backgroundColor: const Color(0xFFD7CCC8),
           body: SingleChildScrollView(
             padding: const EdgeInsets.only(bottom: 30),
-            child: Stack(
+            child:
+            Stack(
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,15 +108,13 @@ class ArticlePage extends StatelessWidget {
                                 );
                               }else if (e is CardVid) {
                                 //add padding
-                                return Padding(
-                                  padding: const EdgeInsets.only(top: 15, bottom: 15),
-                                  child: e,
-                                );
+                                return e;
                               }
                               return const SizedBox();
                             }).toList(),
-                          )
+                          ),
 
+                          // CardVid(width: 330, height: 220, videoId: 'AIeOHiQvlCQ'),
                         ],
                       ),
                     ),
@@ -134,6 +133,6 @@ class ArticlePage extends StatelessWidget {
           ),
         ),
     );
-
+    // return CardVid(width: 330, height: 220, videoId: 'AIeOHiQvlCQ');
   }
 }
