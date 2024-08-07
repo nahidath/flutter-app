@@ -2,51 +2,103 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 // import 'package:pod_player/pod_player.dart';
 // import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 // import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-class CardVid extends StatefulWidget {
+class CardVid extends StatelessWidget {
   final String videoId;
   final double width = 330;
   final double height = 220;
-  const CardVid({super.key, required this.videoId, width, height});
+  const CardVid({required this.videoId, width, height});
 
-  @override
-  State<CardVid> createState() => _CardVidState();
-}
+  // @override
+  // State<CardVid> createState() => _CardVidState();
+// }
 
-class _CardVidState extends State<CardVid> {
-// To control the youtube video functionality
-  final _controller = YoutubePlayerController(
-    params: YoutubePlayerParams(
-      mute: false,
-      showControls: true,
-      showFullscreenButton: true,
-    ),
-  );
-  @override
-  void initState() {
-    super.initState();
-    // TO load a video by its unique id
-    _controller.cueVideoById(videoId: widget.videoId);
-  }
+// class _CardVidState extends State<CardVid> {
+// // To control the youtube video functionality
+//   final _controller = YoutubePlayerController(
+//     params: YoutubePlayerParams(
+//       mute: false,
+//       showControls: true,
+//       showFullscreenButton: true,
+//     ),
+//   );
+//   @override
+//   void initState() {
+//     // super.initState();
+//     // // TO load a video by its unique id
+//     // _controller.cueVideoById(videoId: widget.videoId);
+//   }
 
   @override
   Widget build(BuildContext context) {
-    return
-      YoutubePlayerScaffold(
-      controller: _controller,
-      aspectRatio: 16 / 9,
-      builder: (context, player) {
-        return Column(
-          children: [
-            player,
-          ],
-        );
+    // URL de la vignette YouTube
+    final thumbnailUrl = 'https://img.youtube.com/vi/$videoId/0.jpg';
+
+
+    return GestureDetector(
+      onTap: () async {
+        // URL de la vidéo YouTube
+        final youtubeUrl = Uri.parse('https://www.youtube.com/watch?v=$videoId');
+
+        // Redirige vers l'application YouTube ou le navigateur web
+        if (await canLaunchUrl(youtubeUrl)) {
+          await launchUrl(youtubeUrl);
+        } else {
+          throw 'Could not launch $youtubeUrl';
+        }
       },
+      child: Stack(
+        children: [
+          Image.network(
+            thumbnailUrl,
+            fit: BoxFit.cover,
+            errorBuilder: (context, error, stackTrace) {
+              // Afficher un widget de repli si l'image ne se charge pas
+              return Container(
+                width: width,
+                height: height,
+                color: Colors.grey,
+                child: const Center(
+                  child: Icon(
+                    Icons.broken_image,
+                    color: Colors.white,
+                  ),
+                ),
+              );
+            },
+          ),
+          // Logo YouTube au centre de la vignette
+          Positioned.fill(
+            child: Align(
+              alignment: Alignment.center,
+              child: Image.asset(
+                'assets/img/youtube_logo.png', // Chemin vers votre logo YouTube
+                width: 60, // Ajustez la taille du logo selon vos besoins
+                height: 60,
+              ),
+            ),
+          ),
+        ],
+      )
     );
+  }
+    // return
+    //   YoutubePlayerScaffold(
+    //   controller: _controller,
+    //   aspectRatio: 16 / 9,
+    //   builder: (context, player) {
+    //     return Column(
+    //       children: [
+    //         player,
+    //       ],
+    //     );
+    //   },
+    // );
   }
 //   late YoutubePlayerController _controller;
 //   bool isFullScreen = false;
@@ -147,4 +199,4 @@ class _CardVidState extends State<CardVid> {
 //       child: PodVideoPlayer(controller: controller),
 //     );
 //   }
-}
+// }

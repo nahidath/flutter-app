@@ -107,8 +107,10 @@ class ArticlePage extends StatelessWidget {
                                   child: e,
                                 );
                               }else if (e is CardVid) {
-                                //add padding
-                                return e;
+                                return Padding(
+                                  padding: const EdgeInsets.only(top: 15, bottom: 15),
+                                  child: e,
+                                );
                               }
                               return const SizedBox();
                             }).toList(),
