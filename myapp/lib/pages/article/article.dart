@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:myapp/pages/article/widgets/card_img.dart';
 import 'package:myapp/pages/article/widgets/card_vid.dart';
 import '../../models/article.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ArticlePage extends StatelessWidget {
   const ArticlePage(this.article, {super.key});
@@ -65,6 +66,7 @@ class ArticlePage extends StatelessWidget {
                             style: const TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
+                              color: Color(0xFF242424),
                             ),
 
                           ),
@@ -97,7 +99,7 @@ class ArticlePage extends StatelessWidget {
                                   e,
                                   style: const TextStyle(
                                     fontSize: 16,
-                                    color: Colors.black,
+                                    color: Color(0xFF242424),
                                   ),
                                 );
                               } else if (e is CardImg) {
@@ -126,8 +128,20 @@ class ArticlePage extends StatelessWidget {
                   top: 50,
                   left: 10,
                   child: IconButton(
+                    color: Color(0xFF242424),
                     icon: const Icon(Icons.arrow_back),
                     onPressed: () => Navigator.of(context).pop(),
+                  ),
+                ),
+                Positioned(
+                  top: 50,
+                  right: 10,
+                  child: IconButton(
+                    color: Color(0xFF242424),
+                    icon: const Icon(Icons.share),
+                    onPressed: () => {
+                      Share.share('Check out this article: ${article.name}'),
+                    },
                   ),
                 ),
               ],
