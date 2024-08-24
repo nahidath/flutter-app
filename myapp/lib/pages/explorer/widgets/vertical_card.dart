@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../../models/article.dart';
+
 
 class VerticalCard extends StatelessWidget {
-  VerticalCard({super.key});
+  final String imgPath;
+  final String title;
+
+
+  VerticalCard({super.key, required this.imgPath, required this.title});
+
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +17,7 @@ class VerticalCard extends StatelessWidget {
       margin: const EdgeInsets.only(right: 20),
       width: 150,
       decoration: BoxDecoration(
-        color: const Color(0xFFD7CCC8),
+        // color: const Color(0xFFD7CCC8),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -20,7 +27,7 @@ class VerticalCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
-                image: AssetImage('assets/img/visage.jpg'),
+                image: AssertImage(imgPath),
                 fit: BoxFit.cover,
               ),
             ),

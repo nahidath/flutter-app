@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/pages/explorer/widgets/vertical_card.dart';
 
 import '../home/widgets/search.dart';
 
@@ -44,6 +45,13 @@ class Explorer extends StatelessWidget {
                   ]
                 ),
                 Column(
+                  children: [
+                    Row(
+                        children: [
+                          VerticalCard()
+                        ]
+                    )
+                  ]
 
                 )
               ]
