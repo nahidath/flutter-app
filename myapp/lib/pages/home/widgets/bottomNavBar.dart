@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../explorer/explorer.dart';
 import '../../profile/profile.dart';
 import '../home.dart';
 
@@ -15,7 +16,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   static final List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    ExplorePageBN(),
+    Explorer(),
     FavoritesPageBN(),
     ProfilePage(),
   ];
@@ -85,14 +86,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
 //   }
 // }
 
-class ExplorePageBN extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Explore Page', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-    );
-  }
-}
+// class ExplorePageBN extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//       child: Text('Explore Page', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+//     );
+//   }
+// }
 
 class FavoritesPageBN extends StatelessWidget {
   @override
