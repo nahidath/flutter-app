@@ -4,11 +4,11 @@ import '../../../models/article.dart';
 
 
 class VerticalCard extends StatelessWidget {
-  final String imgPath;
-  final String title;
-
-
-  VerticalCard({super.key, required this.imgPath, required this.title});
+  // final String imgPath;
+  // final String title;
+  //
+  //
+  // VerticalCard({required this.imgPath, required this.title});
 
 
   @override
@@ -27,22 +27,44 @@ class VerticalCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               image: const DecorationImage(
-                image: AssertImage(imgPath),
+                image: AssetImage('assets/img/visage.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(10),
+
+          //add faded background to text to make it more readable on the image
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: const Color(0xFFD7CCC8).withOpacity(0.7),
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
+            ),
             child: Text(
               'Visage',
-              style: TextStyle(
+              style: const TextStyle(
                 color: Color(0xFF7D3705),
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
+
+
+          // const Padding(
+          //   padding: EdgeInsets.all(10),
+          //   child: Text(
+          //     'Visage',
+          //     style: TextStyle(
+          //       color: Color(0xFF7D3705),
+          //       fontSize: 18,
+          //       fontWeight: FontWeight.bold,
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

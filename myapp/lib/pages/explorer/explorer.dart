@@ -48,7 +48,8 @@ class Explorer extends StatelessWidget {
                   children: [
                     Row(
                         children: [
-                          VerticalCard()
+                          VerticalCard(),
+                          VerticalCard(),
                         ]
                     )
                   ]
