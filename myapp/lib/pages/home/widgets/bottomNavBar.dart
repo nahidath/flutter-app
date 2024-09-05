@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../explorer/explorer.dart';
+import '../../favorite/favorite.dart';
 import '../../profile/profile.dart';
 import '../home.dart';
 
@@ -17,7 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   static final List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     Explorer(),
-    FavoritesPageBN(),
+    Favorite(),
     ProfilePage(),
   ];
 
@@ -62,11 +63,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.favorite),
-                  label: 'Favorites',
+                  label: 'Favoris',
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.person),
-                  label: 'Profile',
+                  label: 'Profil',
                 ),
               ],
               currentIndex: _selectedIndex,
