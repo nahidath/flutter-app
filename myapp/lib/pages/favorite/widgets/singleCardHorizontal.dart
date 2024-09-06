@@ -23,7 +23,7 @@ class SingleCH extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: Column(
                 children :[
-                  CardImg(imgPath: 'assets/img/black_woman_face.jpg'),
+                  CardImg(imgPath: 'assets/img/black_woman_face.jpg', isFavorite: true),
                   SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
