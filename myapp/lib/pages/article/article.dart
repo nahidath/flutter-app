@@ -13,9 +13,9 @@ class ArticlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  AnnotatedRegion(
-        value: const SystemUiOverlayStyle(statusBarColor: Color(0xFFD7CCC8), statusBarIconBrightness: Brightness.dark),
+        value: const SystemUiOverlayStyle(statusBarColor: Color(0xFFF3E7E4), statusBarIconBrightness: Brightness.dark),
         child: Scaffold(
-          backgroundColor: const Color(0xFFD7CCC8),
+          backgroundColor: const Color(0xFFF3E7E4),
           body: SingleChildScrollView(
             padding: const EdgeInsets.only(bottom: 30),
             child:

@@ -30,7 +30,7 @@ class CardImg extends StatelessWidget {
         alignment: Alignment.topRight,
         child: Icon(
            Icons.favorite ,
-          color: Colors.red,
+          color: Color(0xFFD73034),
           size: 35,
         ),
       ) : SizedBox(height:0),

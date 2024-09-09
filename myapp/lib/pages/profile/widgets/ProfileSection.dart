@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/pages/profile/subpages/modifyInfo.dart';
 
 class ProfileSection extends StatelessWidget {
   ProfileSection({super.key});
@@ -7,6 +8,7 @@ class ProfileSection extends StatelessWidget {
     {
       'icon': Icons.person,
       'title': 'Modifier les informations',
+      'route': ModifyInfo(),
     },
     {
       'icon': Icons.notifications,
@@ -26,7 +28,7 @@ class ProfileSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Color(0xFFD7CCC8),
+        color: Color(0xFFF3E7E4),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
@@ -44,6 +46,7 @@ class ProfileSection extends StatelessWidget {
                   'Nom Prenom',
                   style: const TextStyle(
                     fontSize: 22,
+                    color: Color(0xFF41210b),
                     fontWeight: FontWeight.bold,
                   ),
                   overflow: TextOverflow.ellipsis,
@@ -60,9 +63,15 @@ class ProfileSection extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ElevatedButton(
-                    onPressed: () { },
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => profilList[index]['route'] as Widget,
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFD7CCC8),
+                      backgroundColor: const Color(0xFFFDF4F4),
                       padding: const EdgeInsets.all(10),
                       fixedSize: Size(MediaQuery.of(context).size.width, 60),
                       shape: RoundedRectangleBorder(
@@ -75,14 +84,14 @@ class ProfileSection extends StatelessWidget {
                       children: [
                         Icon(
                           profilList[index]['icon'] as IconData,
-                          color: Color(0xFF242424),
+                          color: Color(0xFF41210b),
                           size: 28,
                         ),
                         const SizedBox(width: 10),
                         Text(
                           profilList[index]['title'] as String,
                           style: const TextStyle(
-                            color: Color(0xFF242424),
+                            color: Color(0xFF41210b),
                             fontSize: 16,
                           ),
                         ),

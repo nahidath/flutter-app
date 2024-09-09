@@ -33,7 +33,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       body: _widgetOptions[_selectedIndex],
       bottomNavigationBar: Container(
-        color: const Color(0xFFD7CCC8),
+        color: const Color(0xFFF3E7E4),
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [
