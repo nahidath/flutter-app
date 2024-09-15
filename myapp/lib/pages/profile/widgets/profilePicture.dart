@@ -24,8 +24,8 @@ class ProfilePicture extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(
-              color: Colors.white,
-              width: 2,
+              color: Color(0xFFFCEDED),
+              width: 1.5,
             ),
           ),
           child: CircleAvatar(
